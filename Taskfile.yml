@@ -1,0 +1,16 @@
+# @prettier
+# this is for local development
+version: "3"
+
+tasks:
+  install-go:
+    cmds:
+      - brew install go
+
+  server:
+    dir: cmd/todo_list_go_htmx
+    cmds:
+      - go run main.go
+# run `task server` in one window,
+# run `task client` in another,
+# then go to localhost:3000
