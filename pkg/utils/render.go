@@ -12,7 +12,7 @@ var render *renderer.Render
 
 func init() {
 	options := renderer.Options{
-		ParseGlobPattern: "pkg/templates/*.html",
+		ParseGlobPattern: RootDir + "/pkg/templates/*.html",
 	}
 
 	render = renderer.New(options)
