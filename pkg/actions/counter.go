@@ -24,10 +24,7 @@ func passDataIntoComponent(componentHtml string, value int) string {
 	return fmt.Sprintf(componentHtml, value)
 }
 
-// acts as a reducer for causing side effects,
-// generates an instance of the updated component,
-// sends component as html string as http response
-func renderUpdatedComponent(w http.ResponseWriter, kind string) {
+func updateAppState(kind string) {
 	if kind == "ADD" {
 		counter.value++
 	} else if kind == "MINUS" {
@@ -35,6 +32,13 @@ func renderUpdatedComponent(w http.ResponseWriter, kind string) {
 	} else if kind == "RESET" {
 		counter.value = 0
 	}
+}
+
+// acts as a reducer for causing side effects,
+// generates an instance of the updated component,
+// sends component as html string as http response
+func renderUpdatedComponent(w http.ResponseWriter, kind string) {
+	updateAppState(kind)
 
 	newValue := passDataIntoComponent(
 		getCounterComponent(),
