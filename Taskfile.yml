@@ -11,6 +11,11 @@ tasks:
     dir: cmd/todo_list_go_htmx
     cmds:
       - go run main.go
+
+  test:
+    dir: pkg/actions
+    cmds:
+      - go test
 # run `task server` in one window,
 # run `task client` in another,
 # then go to localhost:3000

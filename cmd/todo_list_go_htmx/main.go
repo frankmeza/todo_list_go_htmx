@@ -13,7 +13,6 @@ func main() {
 	mux := mux.NewRouter()
 	mux.HandleFunc("/", utils.RenderHome)
 
-	// mux.HandleFunc("/add_task", actions.AddTask)
 	mux.HandleFunc("/increment_counter", actions.Increment)
 	mux.HandleFunc("/decrement_counter", actions.Decrement)
 	mux.HandleFunc("/reset_counter", actions.ResetCounter)
